@@ -9,17 +9,38 @@
             <div class="clip_container">
               <div class="clip clip1">
                 <div class="text text1">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                  <div class="text_description__wrapper">
+                    <div class="text_description__header">
+                      <h2>Header is header <code>h2</code></h2>
+                    </div>
+                    <div class="text_description">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="clip clip2">
                 <div class="text text2">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                  <div class="text_description__wrapper">
+                    <div class="text_description__header">
+                      <h2>Header is header <code>h2</code></h2>
+                    </div>
+                    <div class="text_description">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="clip clip3">
                 <div class="text text3">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                  <div class="text_description__wrapper">
+                    <div class="text_description__header">
+                      <h2>Header is header <code>h2</code></h2>
+                    </div>
+                    <div class="text_description">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -97,8 +118,19 @@ export default {
     position: absolute;
     background-color: white;
     width: 50%;
+    height: 30vh;
     bottom: -50vh;
     transition: 1s;
   }
-
+  .text_description__wrapper{
+    padding: 10px;
+  }
+  .text_description {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 576px){
+    .text {
+      width: 90%;
+    }
+  }
 </style>

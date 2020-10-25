@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">Главная</router-link> |
+      <router-link to="/about">Не главная</router-link> |
+      <router-link to="/contacts">Контакты</router-link>
     </div>
     <loader></loader>
     <!--<newLoader/>-->
@@ -32,6 +33,7 @@
 
 #nav {
   position: fixed;
+  z-index: 102030;
   width: 100%;
   padding: 30px;
   background-color: #2c3e50;
