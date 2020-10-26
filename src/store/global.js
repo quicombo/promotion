@@ -1,26 +1,32 @@
 const state = {
     loading: false,
-    darkTheme: false
+    isThemeDark: false
 };
 const mutations = {
     setLoading(state, bool) {
         state.loading = bool;
     },
-    setTheme(state, bool) {
-        state.darkTheme = bool
+    CHANGE_THEME: (state) => {
+        state.isThemeDark = !state.isThemeDark
     }
 };
 const getters = {
     getLoading: state => {
         return state.loading;
     },
-    getTheme: state => {
-        return state.darkTheme
+    THEME(state){
+        return state.isThemeDark;
     }
 };
+const actions = {
+    TOGGLE_THEME({commit}) {
+        commit('CHANGE_THEME')
+    }
+}
 export default  {
     state,
     getters,
-    mutations
+    mutations,
+    actions
 };
 

@@ -6,34 +6,12 @@ import router from './router'
 import { store } from './store/index'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-  faUserSecret,
-  faBiohazard,
-  faBatteryFull,
-  faBatteryHalf,
-  faBatteryQuarter,
-  faBatteryEmpty,
-  faBatteryThreeQuarters,
-  faSkull,
-  faCar,
-  faCat,
-  faCarCrash,
-  faHospital
+  faAngleUp, faEnvelope, faMobileAlt
 } from '@fortawesome/free-solid-svg-icons'
-import {faNodeJs, faCss3, faHtml5, faVuejs, faSass} from '@fortawesome/free-brands-svg-icons'
+import {faNodeJs, faCss3, faHtml5, faVuejs, faSass, faTelegramPlane, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faUserSecret,
-    faBiohazard,
-    faBatteryFull,
-    faBatteryHalf,
-    faBatteryQuarter,
-    faBatteryEmpty,
-    faBatteryThreeQuarters,
-    faSkull,
-    faCar,
-    faCat,
-    faCarCrash,
-    faHospital,
-    faNodeJs, faCss3, faHtml5, faVuejs, faSass)
+library.add(
+    faNodeJs, faCss3, faHtml5, faVuejs, faSass, faAngleUp, faEnvelope, faTelegramPlane, faMobileAlt, faLinkedin)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 

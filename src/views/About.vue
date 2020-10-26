@@ -1,7 +1,10 @@
 <template>
   <div class="about">
-    <h1>Ищу работу за деньги</h1>
+    <h1 id="top">Ищу работу за деньги</h1>
     <h2 style="">что могу:</h2>
+    <div class="scroll_to_top__wrapper" @click="toTop">
+      <font-awesome-icon :icon="['fas', 'angle-up']" size="2x" class="to_top"/>
+    </div>
     <section class="main_content">
       <div class="container">
         <div class="row">
@@ -44,7 +47,7 @@
         </div>
       </div>
     </section>
-    <section class="main_content">
+    <section class="main_content third">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -71,7 +74,9 @@
 <script>
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollToPlugin);
   export default  {
       name: 'about',
       methods: {
@@ -87,6 +92,12 @@
                       y: 120,
                       opacity: 0.1
                   })
+              })
+          },
+          toTop() {
+              gsap.to(window, {
+                  duration: 1,
+                  scrollTo: {y: "#top", offsetY: 70},
               })
           }
       },
@@ -111,5 +122,21 @@
   .main_content {
     margin-bottom: 50px;
     margin-top: 25px;
+  }
+  .scroll_to_top__wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--app-navigation-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .to_top {
+    color: var(--dynamic-navigation-current-color)
   }
 </style>

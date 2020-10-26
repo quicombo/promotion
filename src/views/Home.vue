@@ -1,20 +1,28 @@
 <template>
   <div class="home">
-    Домашняя страница
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="wrapper">
-            <h1>наведи на любой блок изображения</h1>
+            <h1>описание</h1>
             <div class="clip_container">
               <div class="clip clip1">
                 <div class="text text1">
                   <div class="text_description__wrapper">
                     <div class="text_description__header">
-                      <h2>Header is header <code>h2</code></h2>
+                      <h2>Имя: Арсений</h2>
                     </div>
                     <div class="text_description">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                      Истинный беларус.
+                    </div>
+                    <div class="text_description">
+                      Характер — нордический, выдержанный.
+                    </div>
+                    <div class="text_description">
+                      С товарищами по работе поддерживаю хорошие отношения.
+                    </div>
+                    <div class="text_description">
+                      Безукоризненно выполняю свой служебный долг.
                     </div>
                   </div>
                 </div>
@@ -23,10 +31,19 @@
                 <div class="text text2">
                   <div class="text_description__wrapper">
                     <div class="text_description__header">
-                      <h2>Header is header <code>h2</code></h2>
+                      <h2>Возраст: 35 лет</h2>
                     </div>
                     <div class="text_description">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                      Семейное положение - женат.
+                    </div>
+                    <div class="text_description">
+                      Детей нет.
+                    </div>
+                    <div class="text_description">
+
+                    </div>
+                    <div class="text_description">
+
                     </div>
                   </div>
                 </div>
@@ -35,10 +52,22 @@
                 <div class="text text3">
                   <div class="text_description__wrapper">
                     <div class="text_description__header">
-                      <h2>Header is header <code>h2</code></h2>
+                      <h2>Навыки и умения:</h2>
                     </div>
                     <div class="text_description">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, temporibus?
+                      HTML5
+                    </div>
+                    <div class="text_description">
+                      CSS3, SCSS, Bootstrap, Grid
+                    </div>
+                    <div class="text_description">
+                      JS, VueJs, GSAP
+                    </div>
+                    <div class="text_description">
+                      Git
+                    </div>
+                    <div class="text_description">
+                      Figma, Photoshop, Adobe xD
                     </div>
                   </div>
                 </div>
@@ -61,15 +90,18 @@ export default {
   components: {
   },
   mounted() {
-   
+
   }
 
 }
 </script>
 <style lang="scss" scoped>
+  h1, h2 {
+    color: var(--dynamic-title-color);
+  }
   .home {
     width: 100%;
-    height: calc((100vh));    
+    height: calc((100vh));
     padding-top: 100px;
   }
   .clip_container {
@@ -94,7 +126,9 @@ export default {
       }
     }
     .clip1 {
-      background: url("https://picsum.photos/1240/600?random=1");
+
+      background: url("../assets/img/me1.jpeg") no-repeat center;
+      background-size: cover;
       //background-color: #42b983;
       clip-path: polygon(0 0, 46% 0, 20% 100%, 0% 100%);
       &:hover .text1{
@@ -102,14 +136,18 @@ export default {
       }
     }
     .clip2 {
-      background: url("https://picsum.photos/1240/600?random=2");
+
+      background: url("../assets/img/me1.jpeg") bottom;
+      background-size: cover;
       clip-path: polygon(46% 0, 100% 0, 46% 100%, 20% 100%);
       &:hover .text2{
         bottom: 0;
       }
     }
     .clip3 {
-      background: url("https://picsum.photos/1240/600?random=3");
+
+      background: url("../assets/img/me1.jpeg") top;
+      background-size: cover;
       clip-path: polygon(100% 0, 100% 0, 100% 100%, 46% 100%);
       &:hover .text3{
         bottom: 0;
@@ -118,10 +156,11 @@ export default {
   }
   .text {
     position: absolute;
-    background-color: white;
+    background-color: var(--app-background-color);
     width: 50%;
     height: 30vh;
-    bottom: -50vh;
+    bottom: -30vh;
+    left: 10px;
     transition: 1s;
   }
   .text_description__wrapper{
@@ -129,10 +168,14 @@ export default {
   }
   .text_description {
     font-size: 20px;
+    color: var(--dynamic-subtitle-color);
   }
   @media screen and (max-width: 576px){
     .text {
       width: 90%;
+    }
+    .text_description {
+      font-size: 14px;
     }
   }
 </style>
