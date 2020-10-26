@@ -60,14 +60,16 @@ export default {
   name: 'Home',
   components: {
   },
+  mounted() {
+   
+  }
 
 }
 </script>
 <style lang="scss" scoped>
   .home {
     width: 100%;
-    height: calc((100vh));
-    background-color: gray;
+    height: calc((100vh));    
     padding-top: 100px;
   }
   .clip_container {
