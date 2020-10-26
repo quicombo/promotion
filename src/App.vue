@@ -3,7 +3,7 @@
     <div id="nav">
       <div class="routes_wrapper">
       <router-link to="/">Главная</router-link> |
-      <router-link to="/about">Не главная</router-link> |
+      <router-link to="/portfolio">Портфолио</router-link> |
       <router-link to="/contacts">Контакты</router-link>
       </div>
       <div class="theme_picker">

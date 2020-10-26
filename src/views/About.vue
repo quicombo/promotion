@@ -10,17 +10,20 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="skill_header">
-              HTML5
+              МАКСКОМ
             </div>
           </div>
           <div class="col-lg-6">
             <div ref="reveal" class="skill_description reveal">
-              по факту, HTML - разметка, основа основ, но всё-же это не сложно
+              ООО «Макском-МН» или просто Макском — оптовая компания, работающая на электротехническом рынке Беларуси с 2001 года.
+            </div>
+            <div ref="reveal" class="skill_description reveal">
+              VUEJS+BOOTSTRAP Классика
             </div>
           </div>
           <div class="col-lg-6">
             <div ref="reveal" class="skill_image from_right reveal">
-              <img src="@/assets/img/html_img.png" alt="">
+              <img src="@/assets/img/maxcom.png" alt="">
             </div>
           </div>
         </div>
@@ -31,12 +34,12 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="skill_header">
-              CSS3
+              АНКРОН
             </div>
           </div>
           <div class="col-lg-6">
             <div ref="reveal" class="skill_image from_left reveal">
-              <img src="@/assets/img/css_img.png" alt="">
+              <img src="@/assets/img/elan.png" alt="">
             </div>
           </div>
           <div class="col-lg-6">
@@ -62,7 +65,7 @@
           </div>
           <div class="col-lg-6">
             <div ref="reveal" class="skill_image from_right reveal">
-              <img src="@/assets/img/js_img.png" alt="">
+              <img src="@/assets/img/mav.png" alt="">
             </div>
           </div>
         </div>
@@ -78,7 +81,7 @@
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
   export default  {
-      name: 'about',
+      name: 'portfolio',
       methods: {
           onscroll() {
               gsap.utils.toArray(".reveal").forEach(anim => {
