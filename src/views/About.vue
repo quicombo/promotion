@@ -1,7 +1,5 @@
 <template>
   <div class="about">
-    <h1 id="top">Ищу работу за деньги</h1>
-    <h2 style="">что могу:</h2>
     <div class="scroll_to_top__wrapper" @click="toTop">
       <font-awesome-icon :icon="['fas', 'angle-up']" size="2x" class="to_top"/>
     </div>
@@ -9,12 +7,12 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="skill_header">
-              МАКСКОМ
+            <div class="skill_header right" >
+              <span >МАКСКОМ</span>
             </div>
           </div>
           <div class="col-lg-6">
-            <div ref="reveal" class="skill_description reveal">
+            <div ref="reveal" class="skill_description reveal" >
               ООО «Макском-МН» или просто Макском — оптовая компания, работающая на электротехническом рынке Беларуси с 2001 года.
             </div>
             <div ref="reveal" class="skill_description reveal">
@@ -33,8 +31,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="skill_header">
-              АНКРОН
+            <div class="skill_header left" >
+              <span >АНКРОН</span>
             </div>
           </div>
           <div class="col-lg-6">
@@ -54,13 +52,13 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="skill_header">
-              JS
+            <div class="skill_header right">
+              <span>МАВ</span>
             </div>
           </div>
           <div class="col-lg-6">
             <div ref="reveal" class="skill_description reveal">
-              Оживляем нашу разметку и стили
+              Лаки краски и прочее
             </div>
           </div>
           <div class="col-lg-6">
@@ -78,10 +76,19 @@
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+  import { TextPlugin } from 'gsap/TextPlugin'
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
+  gsap.registerPlugin(TextPlugin);
   export default  {
       name: 'portfolio',
+      data() {
+        return{
+          maxcom: 'MAXCOM',
+          ankron: 'ANKRON',
+          mav: 'MAV'
+        }
+      },
       methods: {
           onscroll() {
               gsap.utils.toArray(".reveal").forEach(anim => {
@@ -102,7 +109,7 @@
                   duration: 1,
                   scrollTo: {y: "#top", offsetY: 70},
               })
-          }
+          },
       },
       mounted() {
           this.onscroll()
@@ -111,7 +118,12 @@
   }
 </script>
 <style lang="scss" scoped>
-.about {
+.right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+  .about {
   padding-top: 100px;
   h1, h2{
     padding: 10px 20px;
@@ -141,5 +153,14 @@
   }
   .to_top {
     color: var(--dynamic-navigation-current-color)
+  }
+  .skill_header{
+    font-size: 20px;
+  }
+  .skill_header, .skill_description {
+    color: var(--dynamic-title-color);
+  }
+  .skill_description {
+    padding: 0 28px;
   }
 </style>

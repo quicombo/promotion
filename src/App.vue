@@ -20,11 +20,13 @@
     </div>
     <loader></loader>
     <!--<newLoader/>-->
-    <router-view/>
+
+    <router-view class="router_v"/>
   </div>
 </template>
 <script>
     import { mapGetters, mapActions } from 'vuex'
+
     import Loader from "./components/loader";
     //import newLoader from "./components/newLoader.vue";
     export default {
@@ -101,7 +103,8 @@
     margin: 0;
   }
 
-  /* Hide default HTML checkbox */
+
+
   .switch input {
     opacity: 0;
     width: 0;

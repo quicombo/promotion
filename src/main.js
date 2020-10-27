@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/styles.scss'
 import router from './router'
 import { store } from './store/index'
+import VueParticles from 'vue-particles'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faAngleUp, faEnvelope, faMobileAlt
@@ -13,7 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(
     faNodeJs, faCss3, faHtml5, faVuejs, faSass, faAngleUp, faEnvelope, faTelegramPlane, faMobileAlt, faLinkedin)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
-
+Vue.use(VueParticles)
 
 Vue.config.productionTip = false
 
