@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="wrapper">
-            <h1>описание</h1>
+            <h1 class="header">описание</h1>
             <div class="clip_container">
               <div class="clip clip1">
                 <div class="text text1">
@@ -98,6 +98,10 @@ export default {
 <style lang="scss" scoped>
   h1, h2 {
     color: var(--dynamic-title-color);
+  }
+  .header {
+    margin-top: 15px;
+    text-transform: uppercase;
   }
   .home {
     width: 100%;

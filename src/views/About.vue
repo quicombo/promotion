@@ -1,9 +1,10 @@
 <template>
-  <div class="about">
-    <div class="scroll_to_top__wrapper" @click="toTop">
+  <div class="portfolio">
+    <!--OLD MARKUP-->
+    <!--<div class="scroll_to_top__wrapper" @click="toTop">
       <font-awesome-icon :icon="['fas', 'angle-up']" size="2x" class="to_top"/>
-    </div>
-    <section class="main_content">
+    </div>-->
+   <!-- <section class="main_content">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -68,29 +69,71 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
+    <!--END OF MARKUP-->
+    <!--NEW MARKUP-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="header">
+            ПОРТФОЛИО
+          </h1>
+        </div>
+        <div class="col-lg-4">
+          <portfolio-item
+              header="МАКСКОМ МН"
+              v-bind:portfolio-stack="['html', 'csasds', 'js']"
+              v-bind:image="imageMaxcom"
+          />
+        </div>
+        <div class="col-lg-4">
+          <portfolio-item
+              header="АНКРОН"
+              v-bind:portfolio-stack="['asd', 'css', 'js']"
+              v-bind:image="imageElan"
+          />
+        </div>
+        <div class="col-lg-4">
+          <portfolio-item
+              header="МАВ"
+              v-bind:portfolio-stack="['html', 'css', 'js']"
+              v-bind:image="imageMav"
+          />
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--END OF MARKUP-->
 
   </div>
 </template>
 <script>
-  import { gsap } from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
-  import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-  import { TextPlugin } from 'gsap/TextPlugin'
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.registerPlugin(ScrollToPlugin);
-  gsap.registerPlugin(TextPlugin);
+
+  import PortfolioItem from "../components/portfolioItem";
+  /*картинки*/
+  import imgMax from './../assets/img/maxcom2.jpg'
+  import imgMav from './../assets/img/mav2.jpg'
+  import imgElan from './../assets/img/elan2.jpg'
+  /*конец картинкам )))*/
+
   export default  {
       name: 'portfolio',
+      components: {PortfolioItem},
       data() {
         return{
           maxcom: 'MAXCOM',
           ankron: 'ANKRON',
-          mav: 'MAV'
+          mav: 'MAV',
+            imageMaxcom: imgMax,
+            imageElan: imgElan,
+            imageMav: imgMav,
         }
       },
       methods: {
-          onscroll() {
+
+          /*onscroll() {
               gsap.utils.toArray(".reveal").forEach(anim => {
                   gsap.from(anim, {
                       scrollTrigger: {
@@ -103,27 +146,25 @@
                       opacity: 0.1
                   })
               })
-          },
-          toTop() {
-              gsap.to(window, {
-                  duration: 1,
-                  scrollTo: {y: "#top", offsetY: 70},
-              })
-          },
+          },*/
+
+
       },
       mounted() {
-          this.onscroll()
+          /*this.onscroll()*/
       }
 
   }
 </script>
+
 <style lang="scss" scoped>
-.right {
+ /* <!--OLD MARKUP--> */
+/*.right {
   display: flex;
   justify-content: flex-end;
   width: 100%;
 }
-  .about {
+.about {
   padding-top: 100px;
   h1, h2{
     padding: 10px 20px;
@@ -134,11 +175,11 @@
   width: 100%;
   height: auto;
 }
-  .main_content {
+.main_content {
     margin-bottom: 50px;
     margin-top: 25px;
   }
-  .scroll_to_top__wrapper {
+.scroll_to_top__wrapper {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -151,16 +192,29 @@
     justify-content: center;
     align-items: center;
   }
-  .to_top {
+.to_top {
     color: var(--dynamic-navigation-current-color)
   }
-  .skill_header{
+.skill_header{
     font-size: 20px;
   }
-  .skill_header, .skill_description {
+.skill_header, .skill_description {
     color: var(--dynamic-title-color);
   }
-  .skill_description {
+.skill_description {
     padding: 0 28px;
-  }
+  }*/
+/* <!--END OF OLD MARKUP--> */
+  /*NEW MARKUP*/
+.portfolio {
+  padding-top: 100px;
+}
+ .header {
+   margin-top: 15px;
+   text-transform: uppercase;
+ }
+
+  /*END OF NEW MARKUP*/
+  /*MEDIA*/
+  /*END OF MEDIA*/
 </style>
