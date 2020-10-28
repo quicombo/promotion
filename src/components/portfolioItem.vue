@@ -43,27 +43,28 @@
 
         },
         methods: {
-            showStack() {
-                this.isStackVisible = !this.isStackVisible;
+            async showStack() {
+                this.isStackVisible = true;
                 //console.log(this.isStackVisible);
-                //this.revealStack();
+              await this.revealStack();
             },
-            revealStack () {
+             revealStack () {
                 console.log('im in')
-                let tl = gsap.timeline();
+                let tl = gsap.timeline({defaults: {duration: 0.1, ease: "elastic"}});
                 gsap.utils.toArray('.visible').forEach(item => {
-                    tl.to(item, {y:-180, opacity: 1})
+                    tl.to(item, {y:-180, opacity: 1}, "+=0.1")
                     console.log('revealing stack item')
                 })
+
             },
         },
         watch: {
-            isStackVisible: {
+            /*isStackVisible: {
                 handler: function (val, oldVal) {
                     console.log('новое значение: %s, старое значение: %s', val, oldVal);
                     this.revealStack();
                 }
-            }
+            }*/
 
 
 
