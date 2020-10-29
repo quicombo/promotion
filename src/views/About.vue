@@ -82,21 +82,21 @@
         <div class="col-lg-4">
           <portfolio-item
               header="МАКСКОМ МН"
-              v-bind:portfolio-stack="['html', 'csasds', 'js']"
+              v-bind:portfolio-stack="['VueJS', 'Vuex', 'AXIOS', 'Masonry', 'fontawesome', 'SCSS']"
               v-bind:image="imageMaxcom"
           />
         </div>
         <div class="col-lg-4">
           <portfolio-item
               header="АНКРОН"
-              v-bind:portfolio-stack="['asd', 'css', 'js']"
+              v-bind:portfolio-stack="['NUXT', 'VueJS', 'AXIOS', 'Vuex', 'fontawesome', 'SCSS']"
               v-bind:image="imageElan"
           />
         </div>
         <div class="col-lg-4">
           <portfolio-item
               header="МАВ"
-              v-bind:portfolio-stack="['html', 'css', 'js']"
+              v-bind:portfolio-stack="['NUXT', 'VueJS', 'AXIOS', 'Vuex', 'fontawesome', 'SCSS']"
               v-bind:image="imageMav"
           />
         </div>
