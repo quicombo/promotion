@@ -3,7 +3,6 @@
     <div class="port_item__wrapper">
       <div class="port_item__header">
         <h2>{{header}}</h2>
-        <router-link to='/portfolio/header'>EXPAND</router-link>
       </div>
       <div class="port_item__body" @click="showStack">
         <img :src=image :alt="this.header" :title="'Компания ' + this.header">
@@ -46,7 +45,7 @@
               this.isStackVisible = !this.isStackVisible;
               // console.log(this.isStackVisible);
               // this.revealStack();
-            },            
+            },
              revealStack () {
                 console.log('im in')
                 let tl = gsap.timeline({defaults: {duration: 0.1, ease: "elastic"}});
@@ -55,7 +54,7 @@
                 })
                // let count = this.portfolioStack.length;
                 // let i = 1;
-                // let timerID = setInterval(() => {                  
+                // let timerID = setInterval(() => {
                 //    gsap.to(`.port_item__stack__item:nth-child(${i})`, {
                 //       opacity: 1,
                 //       y: -180
@@ -69,9 +68,9 @@
         },
         watch: {
             isStackVisible: {
-                handler: function () {                    
+                handler: function () {
                     this.revealStack();
-                }                 
+                }
             }
         }
     }

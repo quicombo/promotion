@@ -28,9 +28,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/contacts.vue')
   },
   {
-    path: '/portfolio/:portID',
+    path: '/portfolio/:Id',
     name: 'pExpand',
     component: portfolioExpanded
+  },
+  {
+    path: '*',
+    name: 'error',
+    component: () => import('../views/error.vue')
   }
 
 ]
