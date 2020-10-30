@@ -4,7 +4,7 @@
       <div class="port_item__header">
         <h2>{{header}}</h2>
       </div>
-      <div class="port_item__body" @click="showStack">
+      <div class="port_item__body" @mouseover="showStack">
         <img :src=image :alt="this.header" :title="'Компания ' + this.header">
         <div class="port_item__stack__wrapper" >
           <div class="port_item__stack__item" v-for="item in portfolioStack" v-bind:key="item.id" v-bind:class="{ visible : isStackVisible}">
@@ -67,10 +67,11 @@
             },
         },
         watch: {
-            isStackVisible: {
-                handler: function () {
-                    this.revealStack();
-                }
+            isStackVisible(val) {
+                    if (val === true)
+                    this.$nextTick(() => {
+                      this.revealStack();
+                    })
             }
         }
     }
